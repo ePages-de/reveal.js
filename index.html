@@ -91,7 +91,7 @@
 					<h3>VICMA patch</h3>
 					<p>
 						<ul>
-							<li>special patch for MS Cartrdiges (6.16.3 -> 6.17.41)</li>
+							<li>special patch for MS Cartrdiges (ePages 6.16.3, MS 6.17.3 -> 6.17.41)</li>
 							<li>tested on internal test system</li>
 							<li>special patch package with workarounds</li>
 						</ul>
@@ -99,17 +99,80 @@
 				</section>
 				
 				<section>
-					<h2>MUL-94:</h2>
-					<h3>ProductTypes: REST - add</h3>
-					<p>
-						<ul>
-							<li>...</li>
-							<li>...</li>
-							<li><a target="_blank" href="http://team-gold-demo-ms.vm-intern.epages.com:3000/">MultiStore Synchronization Service</a></li>
-							<li><a target="_blank" href="http://team-gold-demo-ms.vm-intern.epages.com:3000/admin/subshop_product_type_map?model_name=subshop_product_type_map&sort=id&sort_reverse=true">Administration: Product Types</a></li>
-							<li><a target="_blank" href="http://team-gold-demo-ep.vm-intern.epages.com/epages/TestShop1.admin">SubShop: MBO</a></li>
-						</ul>
-					</p>
+					<section>
+						<h2>MUL-94:</h2>
+						<h3>ProductTypes: REST - add</h3>
+						<p>
+							<ul>
+								<li><a target="_blank" href="http://team-gold-demo-ms.vm-intern.epages.com:3000/">MultiStore Synchronization Service</a></li>
+								<li><a target="_blank" href="http://team-gold-demo-ms.vm-intern.epages.com:3000/admin/subshop_product_type_map?model_name=subshop_product_type_map&sort=id&sort_reverse=true">Administration: Product Types</a></li>
+								<li><a target="_blank" href="http://team-gold-demo-ep.vm-intern.epages.com/epages/TestShop1.admin">SubShop: MBO</a></li>
+								<li>test refactoring</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th>Products</th>
+									<th>Product Types</th>
+									<th>Categories</th>
+									<th>CatProd Map</th>
+									<th>Trans Attr</th>
+									<th>Images</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>GET</td>
+									<td><img width="30" height="30" src="assets/images/Kliponious-green-tick.png" style="border:0" ></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>POST</td>
+									<td><img width="30" height="30" src="assets/images/Kliponious-green-tick.png" style="border:0" ></td>
+									<td><img width="30" height="30" src="assets/images/Kliponious-green-tick.png" style="border:0" ></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>PUT</td>
+									<td><img width="30" height="30" src="assets/images/Kliponious-green-tick.png" style="border:0" ></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>PATCH</td>
+									<td><img width="30" height="30" src="assets/images/Kliponious-green-tick.png" style="border:0" ></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>DELETE</td>
+									<td><img width="30" height="30" src="assets/images/Kliponious-green-tick.png" style="border:0" ></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
 				</section>
 				
 				<section>
@@ -124,20 +187,21 @@
                             </ul>
                         </p>
                     </section>
-                    <section>
+                    <section data-transition="fade">
                         <h2>MUL-211:</h2>
                         <h3>rails-erd</h3>
-                        <p>
-							<iframe src="assets/pdf/Complete.pdf" width="600" height="500" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                        </p>
+						<p>
+							<iframe src="assets/pdf/Complete.pdf" width="1800" height="500" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+						</p>
                     </section>
-					<section>
+					<section data-transition="fade">
                         <h2>MUL-211:</h2>
                         <h3>rails-erd</h3>
-                        <p>
-                            <iframe src="assets/pdf/Master-Subshop-Products.pdf" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-                        </p>
+						<p>
+							<iframe src="assets/pdf/Master-Subshop-Products.pdf" width="1800" height="500" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+						</p>
                     </section>
+					
                     <section>
                         <h2>MUL-211:</h2>
                         <h3>DbSchema</h3>
