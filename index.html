@@ -45,7 +45,7 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Sprint #8 Team Review</h3>
+					<h3>Sprint #9 Team Review</h3>
 					<p>
 						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Silvio König, Declan Moran, Maik Zeyen</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
@@ -60,16 +60,18 @@
 						<h2>Agenda</h2>
 						<ol>
 							<!-- <li>ProductRypes: REST - GET single</li>-->
-							<li>MS Connector cartridge: Product to product type assignment</li>
-							<li>Finding missing weak points</li>
-							<li>Deploy parallel sync cleanup script to ENO.de</li>
+							<li>Eno-epages-testsystem: patch to 6.17.42</li>
+							<li>Security topics</li>
+							<li>Synch Service: link products to product types</li>
+							<li>Synch Service: get single product type</li>
 						</ol>
 						<aside class="notes">
 							This is the agenda for current sprint, all tasks listed here.
 							<ol>
-								<li>MUL-230 - MS Connector cartridge: Product to product type assignment</li>
-								<li>MUL-240 - Research: what besides Hooks did we miss in the synchronisation API compared to the eP6 API </li>
-								<li>MUL-209 - MS1: Paralell sync process cleanup script </li>
+								<li>MUL-246 - ENO - Patch from HotFix Version - ePages test system</li>
+								<li>MUL-223 - Research: Security topics</li>
+								<li>MUL-229 - Link products with product types in the Microservice DB</li>
+								<li>MUL-201 - Synch Service: Get single ProductType</li>
 							</ol>
 						</aside>
 					</section>
@@ -77,86 +79,46 @@
 
 				<section>
 					<section>
-						<h2>MUL-230:</h2>
-						<h3>MS Connector cartridge: Product to product type assignment</h3>
+						<h2>MUL-246:</h2>
+						<h3>ENO - Patch from HotFix Version - ePages test system</h3>
 						<p>
 							<ul>
-								<li>verify the product type of a product on POST</li>
-								<li>evaluate the impact of the check on the performance</li>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<img width="90%" height="80%" data-src="assets/images/Test1Test2.png" alt="Test1Test2">
-					</section>
-					<section>
-						<img width="90%" height="80%" data-src="assets/images/Test1Test2-Compare.png" alt="Test1Test2">
-					</section>
-					<section>
-						<img width="90%" height="80%" data-src="assets/images/Test1Test3.png" alt="Test1Test3">
-					</section>
-					<section>
-						<img width="90%" height="80%" data-src="assets/images/Test1Test3-Compare.png" alt="Test1Test3">
-					</section>
-					<section>
-						<img width="90%" height="80%" data-src="assets/images/Test3Test4.png" alt="Test3Test4">
-					</section>
-					<section>
-						<img width="90%" height="80%" data-src="assets/images/Test3Test4-Compare.png" alt="Test3Test4">
-					</section>
-					<section>
-						<h3>Performance evaluation</h3>
-						<p>
-							<ul>
-								<li>tested on virtual machines (low performance)</li>
-								<li>~38,8 s / 1000 products</li>
-								<li>400.000 products ~ 4,31 h</li>
-								<li>MS 1.0 needs for 60.000 products > 7 h on real hardware, but with translation attributes</li>
-								<li><strong>still room for improvements:</strong> parallel calls, microservice optimisation, Synch API</li>
+								<li>patch from 6.16.1.13 + hf -> 6.17.9 -> 6.17.42</li>
+								<li>find bug in patch 6.17.42 <a href="https://epages.atlassian.net/browse/AD-4404">AD-4404</a> during patch</li>
+								<li>some minor changes to patch 6.17.9</li>
+								<li>deactivate UsePrebuildStoreTypes for patch to 6.17.42</li>
 							</ul>
 						</p>
 					</section>
 				</section>
 				
 				<section>
-					<h2>MUL-240:</h2>
-					<h3>Finding missing weak points</h3>
+					<h2>MUL-229:</h2>
+					<h3>Link products with product types in the Microservice DB</h3>
 					<p>
 						<ul>
-							<li>trigger hooks on insert, update, delete</li>
-							<li>reset &amp; synchronize caches</li>
-							<li>avoid table locking</li>
-							<li>reject invalid inputs (we have no UI form validation)</li>
-							<li>shop features &amp; feature limits</li>
-							<li>sub products &amp; variation products</li>
-							<li>table <code>lastupdate</code></li>
+							<li><a href="...">MultiStoreSynchronisationService ... TODO ADD LINK TARGET</a></li>
 						</ul>
 					</p>        
 				</section>
 				
 				<section>
-					<h2>MUL-209:</h2>
-					<h3>Deploy parallel sync cleanup script to ENO.de</h3>
+					<h2>MUL-201:</h2>
+					<h3>Synch Service: Get single ProductType</h3>
 					<p>
 						<ul>
-							<li>hotfix for ENO.de test applied</li>
-							<li>live systems still remaining</li>
-							<li>hotfix &amp; parallel patch attempt to 6.17.41 lead to defective test system</li>
+							<li><a href="...">MultiStoreSynchronisationService ... TODO ADD LINK TARGET</a></li>
 						</ul>
-					</p>
+						<ul>
+							<li><a href="...">ePages6 Shop ... TODO ADD LINK TARGET</a></li>
+						</ul>
+						<ul>
+							<li><a href="https://circle-artifacts.com/gh/ePages-de/multistore-MS/145/artifacts/0/home/ubuntu/multistore-MS/prototypes/rails/coverage/index.html#_Controllers">link to code coverage last build</a></li>
+						</ul>
+					</p>        
 				</section>
-
-				<section data-background="assets/background_images/gold_stones_hc_cut_right.jpg" style="text-align: left;">
-					<h1>Last Questions?</h1>
-					<p>
-						- <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">MultiStore confluence space</a> <br>
-						- <a href="http://team-gold-demo-ep.vm-intern.epages.com:3001/api-console/connector.html">REST documentation</a> <br>
-						- <a href="https://epages.atlassian.net/wiki/display/MUL/MVP">MVP documentation</a> <br>
-						- <a href="https://github.com/ePages-de/multistore-MS">MultiStore Synchronization Service repository</a> <br>
-						- <a href="https://github.com/ePages-de/rest-test-gold">REST-Test repository</a> <br>
-						- <a href="https://github.com/ePages-de/multistore-rest-documentation">REST-Test documentation repository</a> <br>
-					</p>
-				</section>
+				
+				
 
 			</div>
 
