@@ -112,15 +112,21 @@
 				</section>
 				
 				<section>
+				    <section>
+						<h2>synch API: trigger hooks</h2>
+						<h3>MUL-241, MUL-250</h3>
+						<img class="stretch" src="assets/images/Image5.png" />  
+					</section>
 					<section>
 						<h2>synch API: trigger hooks</h2>
 						<h3>MUL-241, MUL-250</h3>
 						<p>
 							<ul>
-								<li>...</li>
-								<li>...</li>
-								<li>...</li>
-								<li>higher performance by scheduler remote search update</li>
+								<li>trigger hooks in eP6: OBJ_InsertProduct, OBJ_InsertContentObject, OBJ_InsertObject</li>
+								<li>tested 100 x 1000 products</li>
+								<li>13,3 min slower MS + ePages 6</li>
+								<li>10,7 min slower ePages 6</li>
+								<li>higher performance if scheduler remote search update is enabled</li>
 							</ul>
 						</p>        
 					</section>
@@ -134,11 +140,14 @@
 					<h3>MS 1.0: customer attribute synchronisation</h3>
 					<p>
 						<ul>
-							<li>...</li>
-							<li>...</li>
-							<li>...</li>
+							<li>bug in MS 1.0</li>
+							<li>sync crashes when subshop has customer attributes and product attributes</li>
+							<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/MasterShop.admin">Master MBO: bug included</a></li>
+							<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/eRetail.admin">SubShop MBO: bug included</a></li>
+							<li><a href="http://vm-mzeyen.vm-intern.epages.com/epages/MasterShop.admin">Master MBO: fixed</a></li>
+							<li><a href="http://vm-mzeyen.vm-intern.epages.com/epages/eRetail.admin">SubShop MBO: fixed</a></li>
 						</ul>
-					</p>        
+					</p>
 				</section>
 				
 				<section>
@@ -146,10 +155,10 @@
 					<h3>research variation products</h3>
 					<p>
 						<ul>
-							<li>...</li>
-							<li>...</li>
-							<li>...</li>
-							<li>...</li>
+							<li>different path compared to normal products</li>
+							<li>inheritance from super product</li>
+							<li>some attributes exclusivly exists on variation products, e.g. StockLevel</li>
+							<li>special handling in class 'Product', can be solved in standard hook</li>
 						</ul> 
 					</p>        
 				</section>
