@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - Review #11</title>
+		<title>Team Gold - Review #12</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -45,7 +45,7 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Sprint #11 Team Review</h3>
+					<h3>Sprint #12 Team Review</h3>
 					<p>
 						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Declan Moran, Maik Zeyen</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
@@ -59,10 +59,7 @@
 					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
 						<h2>Agenda</h2>
 						<ol>
-							<li>MVP plan: partial updates</li>
-							<li>synch API: trigger hooks</li>
-							<li>MS 1.0: customer attribute synchronisation</li>
-							<li>synch API: research variation products</li>
+							<li>MVP plan: status change updates from ePages6 master shop</li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -71,95 +68,41 @@
 
 				<section>
 					<section>
-						<h2>MVP plan</h2>
-						<h3>partial updates - take over StockLevel</h3>
-						<p>
-							<ul>
-								<li>remove stocklevel from MS 1.0</li>
-								<li>synch stocklevel with synch service</li>
-								<li>go live asap</li>
-								<li>feedback asap</li>
-								<li>replace MS 1.0 synchronization step by step</li>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<h3>MS 1.0</h3>
-						<img class="stretch" src="assets/images/Image2.png" />
-					</section>
-					<section>
-						<h3>replace MS 1.0 stocklevel synchronization</h3>
-						<img class="stretch" src="assets/images/Image4.png" />
-					</section>
-					<section>
-						<h3>what we have</h3>
-						<img class="stretch" src="assets/images/Image5.png" />
-					</section>
-					<section>
-					    <h3>what's new?</h3>
+					    <h3>overiew</h3>
 						<img class="stretch" src="assets/images/Image6.png" />
 					</section>
 					<section>
-						<h2>MVP plan - Showtime</h2>
-						<h3>REST API - for MultiStores Synchronization Service</h3>
+						<h2>MVP plan</h2>
+						<h3>trigger status updates from master shop (MUL-257/MUL-275)</h3>
 						<p>
 							<ul>
-								<li><a href="http://agrohmann-vm5.vm-intern.epages.com:3000/admin/master_products_source_status">admin: master product source status</a></li>
-								<li><a href="http://agrohmann-vm5.vm-intern.epages.com:3000/master_products_source_status">ui: master product source status</a></li>
-							</ul>
-						</p>
-					</section>
-				</section>
-				
-				<section>
-				    <section>
-						<h2>synch API: trigger hooks</h2>
-						<h3>MUL-241, MUL-250</h3>
-						<img class="stretch" src="assets/images/Image5.png" />  
-					</section>
-					<section>
-						<h2>synch API: trigger hooks</h2>
-						<h3>MUL-241, MUL-250</h3>
-						<p>
-							<ul>
-								<li>trigger hooks in eP6: OBJ_InsertProduct, OBJ_InsertContentObject, OBJ_InsertObject</li>
-								<li>tested 100 x 1000 products</li>
-								<li>13,3 min slower MS + ePages 6</li>
-								<li>10,7 min slower ePages 6</li>
-								<li>higher performance if scheduler remote search update is enabled</li>
+								<li>new REST API endpoint for Synchronization Service</li>
+								<li>new ePages 6 cartridge "MultiStoreMasterConnector"- contains Master hooks and REST client</li>
+								<li>configurable basic authentification</li>
 							</ul>
 						</p>        
 					</section>
 					<section>
-						<img src="assets/images/Image1.png" />
+						<h2>MVP plan</h2>
+						<h3>showtime</h3>
+						<p>
+							<ul>
+								<li><a href="http://agrohmann-vm5.vm-intern.epages.com:3000/admin/master_products_source_status">MS-Synchronization-Service</a></li>
+								<li><a href="http://http://vm-mzeyen2.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
+							</ul>
+						</p>
 					</section>
 				</section>
 				
+
 				<section>
-					<h2>MUL-274</h2>
-					<h3>MS 1.0: customer attribute synchronisation</h3>
+					<h2>Whats Next?</h2>
+					<h3>MUL-258 - Fetch stock level information from Master </h3>
 					<p>
 						<ul>
-							<li>bug in MS 1.0</li>
-							<li>sync crashes when subshop has customer attributes and product attributes</li>
-							<li><a href="http://vm-mzeyen.vm-intern.epages.com/epages/MasterShop.admin">Master MBO: bug included</a></li>
-							<li><a href="http://vm-mzeyen.vm-intern.epages.com/epages/eRetail.admin">SubShop MBO: bug included</a></li>
-							<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/MasterShop.admin"></a>Master MBO: fixed</li>
-							<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/eRetail.admin"></a>SubShop MBO: fixed</li>
+							<li>get content from MasterShop for all changed products</li>
+							<li>save and manage product content in Synchronization Service</li>
 						</ul>
-					</p>
-				</section>
-				
-				<section>
-					<h2>MUL-261</h2>
-					<h3>research variation products</h3>
-					<p>
-						<ul>
-							<li>different path compared to normal products</li>
-							<li>inheritance from super product</li>
-							<li>some attributes exclusivly exists on variation products, e.g. StockLevel</li>
-							<li>special handling in class 'Product', can be solved in standard hook</li>
-						</ul> 
 					</p>        
 				</section>
 				
