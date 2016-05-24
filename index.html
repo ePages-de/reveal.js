@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - Review #12</title>
+		<title>Team Gold - Review #13</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -45,9 +45,9 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Sprint #12 Team Review</h3>
+					<h3>Sprint #13 Team Review</h3>
 					<p>
-						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Declan Moran, Maik Zeyen</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
+						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Maik Zeyen, Florian Ziller</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
 					
 					<aside class="notes">
@@ -59,7 +59,9 @@
 					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
 						<h2>Agenda</h2>
 						<ol>
-							<li>MVP plan: status change updates from ePages6 master shop</li>
+							<li>MVP plan: master shop creation auto import from epages6</li>
+							<li>MS 1.0: amazon pitfalls</li>
+							<li>other stuff<li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -68,22 +70,20 @@
 
 				<section>
 					<section>
-					    <h3>overiew</h3>
-						<img class="stretch" src="assets/images/Image6.png" />
-					</section>
-					<section>
 						<h2>MVP plan</h2>
-						<h3>trigger status updates from master shop (MUL-257/MUL-275)</h3>
+						<h3>trigger status updates from master shop (MUL-282)</h3>
 						<p>
 							<ul>
-								<li>new REST API endpoint for Synchronization Service</li>
-								<li>new ePages 6 cartridge "MultiStoreMasterConnector"- contains Master hooks and REST client</li>
-								<li>configurable basic authentification</li>
+								<li>ePages6: REST function to get all ms_products per shop</li>
+								<li>Synch Service: hook after create mastershop</li>
+								<li>Synch Service: new model functions</li>
+								<li>Synch Service: new classes rest_connector, epages6::StoreConnector</li>
+								<li>Synch Service: auto fetch process using all above</li>
 							</ul>
 						</p>        
 					</section>
 					<section>
-						<h2>MVP plan</h2>
+						<h2>MUL-282</h2>
 						<h3>showtime</h3>
 						<p>
 							<ul>
@@ -92,6 +92,33 @@
 							</ul>
 						</p>
 					</section>
+				</section>
+				
+				<section>
+					<h2>MS 1.0: amazon pitfalls</h2>
+					<h3>Research: Make Amazon work in a subshop (MUL-277)</h3>
+					<p>
+						<ul>
+							<li>missing post order handling</li>
+							<li>missing amazon synchronization: delivery time</li>
+							<li>missing amazon synchronization: price changes</li>
+							<li>necessary changes in Master MBO, overwriteable attributes</li>
+							<li>fix existing inconsistencies amazon offers</li>
+							<li>added script to set overwriteable attributes in mastershop</li>
+							<li>...</li>
+						</ul>
+					</p>        
+				</section>
+				
+				<section>
+					<h2>other stuff</h2>
+					<p>
+						<ul>
+							<li>Talisma: 661-961</li>
+							<li>MS 1.0: pipeline issues MUL-280, MUL-281</li>
+							<li>MS 2.0: bug rubocop in docker MUL-279</li>
+						</ul>
+					</p>        
 				</section>
 				
 				<section data-background="assets/background_images/gold_stones_hc_cut_right.jpg" style="text-align: left;">
