@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - Review #13</title>
+		<title>Team Gold - Review #14</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -45,9 +45,9 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Sprint #13 Team Review</h3>
+					<h3>Team Review #14</h3>
 					<p>
-						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Maik Zeyen, Florian Ziller</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
+						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Florian Ziller, Maik Zeyen</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
 					
 					<aside class="notes">
@@ -59,9 +59,10 @@
 					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
 						<h2>Agenda</h2>
 						<ol>
-							<li>MVP plan: master shop creation auto import from epages6</li>
-							<li>MS 1.0: amazon pitfalls</li>
-							<li>other stuff</li>
+							<li>MS 2.0: continuous master product source update</li>
+							<li>MS 2.0: REST request paging for get products by shop</li>
+							<li>MS 2.0: dockerization rest-test-gold framework</li>
+							<li>MS 2.0: inspector for MS Sync Service</li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -71,22 +72,22 @@
 				<section>
 					<section>
 						<h2>MVP plan</h2>
-						<h3>auto source fetch when creating a mastershop in MultiStore Synchronization Service (MUL-282)</h3>
+						<h3>continuous master product source update - stock level (MUL-258)</h3>
 						<p>
 							<ul>
-								<li>ePages6: REST function to get all ms_products per shop</li>
 								<li>Synch Service:</li>
 								<ul>
-								    <li>hook after create mastershop</li>
-								    <li>new model functions</li>
-								    <li>new classes rest_connector, epages6::StoreConnector</li>
-								    <li>auto fetch process using all above</li>
+								    <li>include whenever gem</li>
+								    <li>handle ubuntu crontab path bug</li>
+								    <li>new main sync controller</li>
+								    <li>new rake task</li>
+									<li>customizition for rest requests e.g. items per request</li>
 						        </ul>
 							</ul>
 						</p>        
 					</section>
 					<section>
-						<h2>MUL-282</h2>
+						<h2>MUL-258</h2>
 						<h3>showtime</h3>
 						<p>
 							<ul>
@@ -98,28 +99,43 @@
 				</section>
 				
 				<section>
-					<h2>MS 1.0: amazon pitfalls</h2>
-					<h3>Research: Make Amazon work in a subshop (MUL-277)</h3>
+					<h2>MS 2.0</h2>
+					<h3>REST request paging for get products by shop (MUL-283)</h3>
 					<p>
 						<ul>
-							<li>missing post order handling</li>
-							<li>missing amazon synchronization: delivery time</li>
-							<li>missing amazon synchronization: price changes</li>
-							<li>necessary changes in Master MBO, overwriteable attributes</li>
-							<li>fix existing inconsistencies amazon offers</li>
-							<li>added script to set overwriteable attributes in mastershop</li>
-							<li>...</li>
+						    <li>ePages6:</li>
+						    <ul>
+								<li>change products resource to handle paged params</li>
+								<li>new Sync API function</li>
+								<li>test cases</li>
+						    </ul>
+							<li>rest-test-gold:</li>
+						    <ul>
+								<li>new test for get products per shop + paged</li>
+								<li>fix cleanup for tests</li>
+						    </ul>
 						</ul>
 					</p>        
 				</section>
 				
 				<section>
-					<h2>other stuff</h2>
+					<h2>dockerization of rest-test-gold</h2>
 					<p>
 						<ul>
-							<li>Talisma: 661-961</li>
-							<li>MS 1.0: pipeline issues MUL-280, MUL-281</li>
-							<li>MS 2.0: bug rubocop in docker MUL-279</li>
+							<li>rest-test-gold frame work based on ruby</li>
+							<li>docker + docker-compose integration</li>
+							<li><a href="https://github.com/agrohmann/rest-test-gold/tree/MUL-283">rest-test-gold-repo</a>
+						</ul>
+					</p>        
+				</section>
+				
+				<section>
+					<h2>inspector for MS Sync Service</h2>
+					<p>
+						<ul>
+							<li>introduction task for Florian</li>
+							<li>MS Sync Service: new simpel controller and view to check connection to the hosts</li>
+							<li><a href="http://cd-vm-test-master-11.intern.epages.de:3000/inspector">Inspektor View</a></li>
 						</ul>
 					</p>        
 				</section>
