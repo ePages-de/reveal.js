@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - Review #14</title>
+		<title>Team Gold - Review #15</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -45,7 +45,7 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Team Review #14</h3>
+					<h3>Team Review #15</h3>
 					<p>
 						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Florian Ziller, Maik Zeyen</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
@@ -59,10 +59,8 @@
 					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
 						<h2>Agenda</h2>
 						<ol>
-							<li>MS 2.0: continuous master product source update</li>
-							<li>MS 2.0: REST request paging for get products by shop</li>
-							<li>MS 2.0: dockerization rest-test-gold framework</li>
-							<li>MS 2.0: inspector for MS Sync Service</li>
+							<li>MS 2.0: new get REST function for selected master products per subshop</li>
+							<li>MS 2.0: auto fetch source subshop_product_mapping infos from epages6</li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -72,72 +70,56 @@
 				<section>
 					<section>
 						<h2>MVP plan</h2>
-						<h3>continuous master product source update - stock level (MUL-258)</h3>
+						<h3>new get REST function for selected master products per subshop - stock level (MUL-288)</h3>
 						<p>
 							<ul>
-								<li>Synch Service:</li>
+								<li>ePages 6:</li>
 								<ul>
-								    <li>include whenever gem</li>
-								    <li>handle ubuntu crontab path bug</li>
-								    <li>new main sync controller</li>
-								    <li>new rake task</li>
-									<li>customizition for rest requests e.g. items per request</li>
+								    <li>all changes in old MS 1.0 cartridge 'MultiStore'</li>
+									<li>new rest resource 'ms_subshop_product_maps' to get selected products</li>
+								    <li>new Sync API</li>
 						        </ul>
 							</ul>
 						</p>        
 					</section>
 					<section>
-						<h2>MUL-258</h2>
+						<h2>MUL-288</h2>
 						<h3>showtime</h3>
 						<p>
 							<ul>
-								<li><a href="http://agrohmann-vm5.vm-intern.epages.com:3000/admin/master_products_source_status">MS-Synchronization-Service</a></li>
-								<li><a href="http://http://vm-mzeyen2.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
+								<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/eRetail.admin/">ePages6-SubShop</a></li>
+								<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
 							</ul>
 						</p>
 					</section>
 				</section>
 				
 				<section>
-					<h2>MS 2.0</h2>
-					<h3>REST request paging for get products by shop (MUL-283)</h3>
-					<p>
-						<ul>
-						    <li>ePages6:</li>
-						    <ul>
-								<li>change products resource to handle paged params</li>
-								<li>new Sync API function</li>
-								<li>test cases</li>
-						    </ul>
-							<li>rest-test-gold:</li>
-						    <ul>
-								<li>new test for get products per shop + paged</li>
-								<li>fix cleanup for tests</li>
-						    </ul>
-						</ul>
-					</p>        
-				</section>
-				
-				<section>
-					<h2>dockerization of rest-test-gold</h2>
-					<p>
-						<ul>
-							<li>rest-test-gold frame work based on ruby</li>
-							<li>docker + docker-compose integration</li>
-							<li><a href="https://github.com/agrohmann/rest-test-gold/tree/MUL-283">rest-test-gold-repo</a>
-						</ul>
-					</p>        
-				</section>
-				
-				<section>
-					<h2>inspector for MS Sync Service</h2>
-					<p>
-						<ul>
-							<li>introduction task for Florian</li>
-							<li>MS Sync Service: new simpel controller and view to check connection to the hosts</li>
-							<li><a href="http://cd-vm-test-master-11.intern.epages.de:3000/inspector">Inspektor View</a></li>
-						</ul>
-					</p>        
+					<section>
+						<h2>MS 2.0</h2>
+						<h3>auto fetch source subshop_product_mapping infos from epages6 when creating a master subshop map in MS Sync Service (MUL-289)</h3>
+						<p>
+							<ul>
+								<li>MS-Sync-Service:</li>
+								<ul>
+									<li>minor changes on docker file, solve restart bug</li>
+									<li>changes on rest connector classes</li>
+									<li>added model functions and hooks for 'product','subshop','subshop_product_map','master_subshop'</li>
+									<li>changed table 'subshop'</li>
+								</ul>
+							</ul>
+						</p>        
+					</section>
+				    <section>
+						<h2>MUL-289</h2>
+						<h3>showtime</h3>
+						<p>
+							<ul>
+								<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/eRetail.admin/">ePages6-SubShop</a></li>
+								<li><a href="http://agrohmann-vm5.vm-intern.epages.com:3000/admin/subshop">MS-Sync-Service</a></li>
+							</ul>
+						</p>
+					</section>
 				</section>
 				
 				<section data-background="assets/background_images/gold_stones_hc_cut_right.jpg" style="text-align: left;">
