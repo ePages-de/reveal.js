@@ -161,7 +161,10 @@ html:-moz-full-screen-ancestor {
 
 .reveal .stretch {
   max-width: none;
-  max-height: none; }
+  max-height: none;
+  border: 0px;
+  background-color: #000;
+}
 
 .reveal pre.stretch code {
   height: 100%;
