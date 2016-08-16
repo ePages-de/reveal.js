@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - Review #15</title>
+		<title>Team Gold - Review #16</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -45,22 +45,23 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Team Review #15</h3>
+					<h3>Team Review #16</h3>
 					<p>
-						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Florian Ziller, Maik Zeyen</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
+						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Florian Ziller</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
-					
+
 					<aside class="notes">
 						This is the main slide for the team gold review.
 					</aside>
 				</section>
-				
+
 				<section>
 					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
 						<h2>Agenda</h2>
 						<ol>
-							<li>MS 2.0: new get REST function for selected master products per subshop</li>
-							<li>MS 2.0: auto fetch source subshop_product_mapping infos from epages6</li>
+							<li>MVP: improved REST function for selected master products per subshop</li>
+							<li>MVP/MS 2.0: complete synchronisation circle for core product attributes</li>
+							<li></li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -70,45 +71,66 @@
 				<section>
 					<section>
 						<h2>MVP plan</h2>
-						<h3>new get REST function for selected master products per subshop - stock level (MUL-288)</h3>
+						<h3>add variation products in ms_subshop_product_map (MUL-303)</h3>
 						<p>
 							<ul>
 								<li>ePages 6:</li>
 								<ul>
 								    <li>all changes in old MS 1.0 cartridge 'MultiStore'</li>
-									<li>new rest resource 'ms_subshop_product_maps' to get selected products</li>
-								    <li>new Sync API</li>
+									<li>improved rest resource 'ms_subshop_product_maps' to get also variation products</li>
+								    <li>changes in Sync API</li>
 						        </ul>
 							</ul>
-						</p>        
+						</p>
 					</section>
 					<section>
-						<h2>MUL-288</h2>
+						<h2>MUL-303</h2>
 						<h3>showtime</h3>
 						<p>
 							<ul>
-								<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/eRetail.admin/">ePages6-SubShop</a></li>
-								<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
+								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/eRetail.admin">ePages6-SubShop</a></li>
+								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
+								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/MultiStore.rest/api/multi_stores/ms_subshop_product_maps?shop=eRetail">REST-Call</a></li>
 							</ul>
 						</p>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
-						<h2>MS 2.0</h2>
-						<h3>auto fetch source subshop_product_mapping infos from epages6 when creating a master subshop map in MS Sync Service (MUL-289)</h3>
+						<h2>MVP/MS 2.0</h2>
+						<h3>sync stock level update to subshop (MUL-259)</h3>
+						<p>
+							<ul>
+								<li>hiding complexity</li>
+								<li>for new mastershops, subshops or assignment, hooks take care of complex actions</li>
+					            <li>for now main sync consists of two parts</li>
+								<ul>
+								    <li>auto fetch dirty sources for all mastershops</li>
+									<li>sync products for all subshops</li>
+									<li>... next will be auto fetch dirty sources for all subshops (selected master catalog)</li>
+								</ul>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>MVP/MS 2.0</h2>
+						<h3>sync stock level update to subshop (MUL-259)</h3>
 						<p>
 							<ul>
 								<li>MS-Sync-Service:</li>
 								<ul>
-									<li>minor changes on docker file, solve restart bug</li>
-									<li>changes on rest connector classes</li>
-									<li>added model functions and hooks for 'product','subshop','subshop_product_map','master_subshop'</li>
-									<li>changed table 'subshop'</li>
+								    <li>new function 'subshops_auto_sync_products' in 'MainSyncController'</li>
+									<li>new put functions in rest and store connector classes</li>
+									<li>added model functions and hooks for 'product','product_sync','subshop' and 'master_sub_shop'</li>
+								</ul>
+								<li>ePages6:</li>
+								<ul>
+									<li>changes in MultiStoreConnector Cartridge sync API</li>
+									<li>fix update product function to handle subclasses of "Product"</li>
 								</ul>
 							</ul>
-						</p>        
+						</p>
 					</section>
 				    <section>
 						<h2>MUL-289</h2>
@@ -121,7 +143,7 @@
 						</p>
 					</section>
 				</section>
-				
+
 				<section data-background="assets/background_images/gold_stones_hc_cut_right.jpg" style="text-align: left;">
 					<h1>Last Questions?</h1>
 					<p>
