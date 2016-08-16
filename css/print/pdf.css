@@ -10,12 +10,8 @@
 }
 
 body {
-	margin: 0 auto !important;
-	border: 0;
-	padding: 0;
-	float: none !important;
-	overflow: visible;
-}
+  background: #000000;
+  background-color: #000000; }
 
 html {
 	width: 100%;
