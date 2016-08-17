@@ -174,6 +174,9 @@ Reveal.initialize({
 	// Stop auto-sliding after user input
 	autoSlideStoppable: true,
 
+	// Use this method for navigation when auto-sliding
+	autoSlideMethod: Reveal.navigateNext,
+
 	// Enable slide navigation via mouse wheel
 	mouseWheel: false,
 
@@ -318,6 +321,8 @@ You can also override the slide duration for individual slides and fragments by 
 	<p class="fragment">Now, the fragment is displayed for 2 seconds before the next slide is shown.</p>
 </section>
 ```
+
+To override the method used for navigation when auto-sliding, you can specify the ```autoSlideMethod``` setting. To only navigate along the top layer and ignore vertical slides, set this to ```Reveal.navigateRight```.
 
 Whenever the auto-slide mode is resumed or paused the ```autoslideresumed``` and ```autoslidepaused``` events are fired.
 
@@ -465,8 +470,8 @@ Slides are contained within a limited portion of the screen by default to allow 
 <section data-background="http://example.com/image.png" data-background-size="100px" data-background-repeat="repeat">
 	<h2>This background image will be sized to 100px and repeated.</h2>
 </section>
-<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-video-loop>
-	<h2>Video. Multiple sources can be defined using a comma separated list. Video will loop when the data-background-video-loop attribute is provided.</h2>
+<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-video-loop data-background-video-muted>
+	<h2>Video. Multiple sources can be defined using a comma separated list. Video will loop when the data-background-video-loop attribute is provided and can be muted with the data-background-video-muted attribute.</h2>
 </section>
 <section data-background-iframe="https://slides.com">
 	<h2>Embeds a web page as a background. Note that the page won't be interactive.</h2>
@@ -519,15 +524,15 @@ You can also use different in and out transitions for the same slide:
 
 ```html
 <section data-transition="slide">
-    The train goes on … 
+    The train goes on …
 </section>
-<section data-transition="slide"> 
-    and on … 
+<section data-transition="slide">
+    and on …
 </section>
-<section data-transition="slide-in fade-out"> 
+<section data-transition="slide-in fade-out">
     and stops.
 </section>
-<section data-transition="fade-in slide-out"> 
+<section data-transition="fade-in slide-out">
     (Passengers entering and leaving)
 </section>
 <section data-transition="slide">
@@ -567,6 +572,7 @@ The default fragment style is to start out invisible and fade in. This style can
 	<p class="fragment grow">grow</p>
 	<p class="fragment shrink">shrink</p>
 	<p class="fragment fade-out">fade-out</p>
+	<p class="fragment fade-up">fade-up (also down, left and right!)</p>
 	<p class="fragment current-visible">visible only once</p>
 	<p class="fragment highlight-current-blue">blue only once</p>
 	<p class="fragment highlight-red">highlight-red</p>
@@ -835,7 +841,7 @@ The multiplex plugin needs the following 3 things to operate:
 More details:
 
 #### Master presentation
-Served from a static file server accessible (preferably) only to the presenter. This need only be on your (the presenter's) computer. (It's safer to run the master presentation from your own computer, so if the venue's Internet goes down it doesn't stop the show.) An example would be to execute the following commands in the directory of your master presentation: 
+Served from a static file server accessible (preferably) only to the presenter. This need only be on your (the presenter's) computer. (It's safer to run the master presentation from your own computer, so if the venue's Internet goes down it doesn't stop the show.) An example would be to execute the following commands in the directory of your master presentation:
 
 1. ```npm install node-static```
 2. ```static```
@@ -960,7 +966,7 @@ Reveal.initialize({
 
 If you want to display math equations in your presentation you can easily do so by including this plugin. The plugin is a very thin wrapper around the [MathJax](http://www.mathjax.org/) library. To use it you'll need to include it as a reveal.js dependency, [find our more about dependencies here](#dependencies).
 
-The plugin defaults to using [LaTeX](http://en.wikipedia.org/wiki/LaTeX) but that can be adjusted through the ```math``` configuration object. Note that MathJax is loaded from a remote server. If you want to use it offline you'll need to download a copy of the library and adjust the ```mathjax``` configuration value. 
+The plugin defaults to using [LaTeX](http://en.wikipedia.org/wiki/LaTeX) but that can be adjusted through the ```math``` configuration object. Note that MathJax is loaded from a remote server. If you want to use it offline you'll need to download a copy of the library and adjust the ```mathjax``` configuration value.
 
 Below is an example of how the plugin can be configured. If you don't intend to change these values you do not need to include the ```math``` config object at all.
 
@@ -973,7 +979,7 @@ Reveal.initialize({
 		mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
 		config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
 	},
-	
+
 	dependencies: [
 		{ src: 'plugin/math/math.js', async: true }
 	]
