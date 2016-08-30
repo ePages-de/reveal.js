@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - Review #16</title>
+		<title>Team Gold - Review #17</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -59,11 +59,13 @@
 					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
 						<h2>Agenda</h2>
 						<ol>
-							<li>Eno: patch test system</li>
-							<li>MVP: improved REST function for selected master products per subshop</li>
+							<li>Eno: patch live system</li>
+							<li>MVP: increase performance PUT products in ePages 6</li>
+							<li>MVP: exclude StockLevel from MS 1.0</li>
 							<li>MVP/MS 2.0: complete synchronisation circle for core product attributes</li>
                             <li>Updated documentation for setup MultiStore and SyncService</li>
-                            <li>MVP/MS 2.0: pipeline integration</li>
+                            <li>Other: MUL-298</li>
+							<li>next steps: </li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -76,13 +78,13 @@
 					</section>
 					<section>
 						<h2>Eno</h2>
-						<h3>support patch for live clone (MUL-286)</h3>
+						<h3>support patch for live system (MUL-287)</h3>
 						<p>
 							<ul>
 								<li>ePages 6.16.11.13 -> 6.17.9 -> 6.17.49 + 2HF</li>
-								<li>6 h on ePages testsystem</li>
-								<li>11 h on ENO testsystem</li>
-								<li>no big issues because of well prepared life2test start point</li>
+								<li>patch to 6.17.9: 5 h 44 min, critical DB error, 10 min of Patch changes was resettet in DB</li>
+								<li>patch to 6.17.49: 4 h 48 min, DNS brokes during patch, DB's not accessable</li>
+								<li>need cleanup after patch
 							</ul>
 						</p>
 					</section>
@@ -91,28 +93,40 @@
 				<section>
 					<section>
 						<h2>MVP plan</h2>
-						<h3>add variation products in ms_subshop_product_map (MUL-303)</h3>
+						<h3>increase performance PUT "ms_products" in ePage6 MS REST API (MUL-309)</h3>
 						<p>
 							<ul>
 								<li>ePages 6:</li>
 								<ul>
-								    <li>all changes in old MS 1.0 cartridge 'MultiStore'</li>
-									<li>improved rest resource 'ms_subshop_product_maps' to get also variation products</li>
+								    <li>tried Parallel::Forkmanager and Threads</li>
+									<li>Threads: decrease performance, because of cloning all environment variables</li>
 								    <li>changes in Sync API</li>
 						        </ul>
 							</ul>
 						</p>
 					</section>
 					<section>
-						<h2>MUL-303</h2>
-						<h3>showtime</h3>
+						<img class="stretch" src="assets/images/MUL-309.PNG" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>MVP plan</h2>
+						<h3>Exclude stock level updates from MS 1.0 (MUL-260)</h3>
 						<p>
 							<ul>
-								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/eRetail.admin">ePages6-SubShop</a></li>
-								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
-								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/MultiStore.rest/api/multi_stores/ms_subshop_product_maps?shop=eRetail">REST-Call</a></li>
+								<li>ePages 6:</li>
+								<ul>
+								    <li>removed Stocklevel attribute from MS 1.0 Synchronization</li>
+									<li>add configuration</li>
+								    <li>changes in Sync API</li>
+						        </ul>
 							</ul>
 						</p>
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/MUL-309.PNG" />
 					</section>
 				</section>
 
