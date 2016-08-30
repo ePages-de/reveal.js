@@ -45,7 +45,7 @@
 				</section> -->
 				<section data-background="assets/background_images/background_1_hc_cut.jpg">
 					<h1>Team Gold</h1>
-					<h3>Team Review #16</h3>
+					<h3>Team Review #17</h3>
 					<p>
 						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Florian Ziller</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
@@ -62,10 +62,10 @@
 							<li>Eno: patch live system</li>
 							<li>MVP: increase performance PUT products in ePages 6</li>
 							<li>MVP: exclude StockLevel from MS 1.0</li>
-							<li>MVP/MS 2.0: complete synchronisation circle for core product attributes</li>
-                            <li>Updated documentation for setup MultiStore and SyncService</li>
-                            <li>Other: MUL-298</li>
-							<li>next steps: </li>
+							<li>MVP/MS 2.0: Create Rest ressource mastershops in EMS app</li>
+							<li>MVP/MS 2.0: Create Rest ressource subshops in EMS app</li>
+                            <li>Other: MUL-298, MUL-306</li>
+							<li>next steps: ...</li>
 						</ol>
 						<aside class="notes">
 						</aside>
@@ -82,31 +82,52 @@
 						<p>
 							<ul>
 								<li>ePages 6.16.11.13 -> 6.17.9 -> 6.17.49 + 2HF</li>
-								<li>patch to 6.17.9: 5 h 44 min, critical DB error, 10 min of Patch changes was resettet in DB</li>
-								<li>patch to 6.17.49: 4 h 48 min, DNS brokes during patch, DB's not accessable</li>
+								<li>6.17.9: 5 h 44 min, critical DB error, 10 min of Patch changes was resettet in DB</li>
+								<li>6.17.49: 4 h 48 min, DNS brokes during patch, DB's not accessable</li>
 								<li>need cleanup after patch
 							</ul>
 						</p>
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/Eno-01.PNG" />
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/Eno-02.PNG" />
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/Eno-03.PNG" />
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/Eno-04.PNG" />
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>MVP plan</h2>
-						<h3>increase performance PUT "ms_products" in ePage6 MS REST API (MUL-309)</h3>
+						<h3>increase performance PUT "ms_products" in ePages 6 MS REST API (MUL-309)</h3>
 						<p>
 							<ul>
 								<li>ePages 6:</li>
 								<ul>
-								    <li>tried Parallel::Forkmanager and Threads</li>
 									<li>Threads: decrease performance, because of cloning all environment variables</li>
-								    <li>changes in Sync API</li>
+									<li>Forks: after parallel execute lose epages6 environment context e.g. dbi connection etc</li>
+								    <li>reduce API calls/ db connections to a minimum</li>
+									<li>tested 33 products at once</li>
+									<li>1445,1 ms vs 1216,3 ms, 15,83% performance increase</li>
+									<li>expected higher performance increase with higher numbers of products, test pending</li>
 						        </ul>
 							</ul>
 						</p>
 					</section>
 					<section>
-						<img class="stretch" src="assets/images/MUL-309.PNG" />
+						<img class="stretch" src="assets/images/MUL-309-01.png" />
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/MUL-309-02.png" />
+					</section>
+					<section>
+						<img class="stretch" src="assets/images/MUL-309-03.PNG" />
 					</section>
 				</section>
 
@@ -119,73 +140,58 @@
 								<li>ePages 6:</li>
 								<ul>
 								    <li>removed Stocklevel attribute from MS 1.0 Synchronization</li>
-									<li>add configuration</li>
-								    <li>changes in Sync API</li>
+									<li>add configuration value</li>
 						        </ul>
 							</ul>
 						</p>
 					</section>
 					<section>
-						<img class="stretch" src="assets/images/MUL-309.PNG" />
+						<img class="stretch" src="assets/images/MUL-260.PNG" />
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>MVP/MS 2.0</h2>
-						<h3>sync stock level update to subshop (MUL-259)</h3>
+						<h3>create 'mastershops' REST ressource in EMS app (MUL-311)</h3>
 						<p>
 							<ul>
-								<li>hiding complexity</li>
-								<li>for new mastershops, subshops or assignment, hooks take care of complex actions</li>
-					            <li>for now main sync consists of two parts</li>
+								<li>...</li>
+								<li>...</li>
+					            <li>...</li>
 								<ul>
-								    <li>auto fetch dirty sources for all mastershops</li>
-									<li>sync products for all subshops</li>
-									<li>... next will be auto fetch dirty sources for all subshops (selected master catalog)</li>
+								    <li>...</li>
+									<li>...</li>
+									<li>...</li>
 								</ul>
 							</ul>
 						</p>
-					</section>
-					<section>
-						<img class="stretch" src="assets/images/01.png" />
 					</section>
 					<section>
 						<img class="stretch" src="assets/images/02.png" />
 					</section>
-					<section>
-						<img class="stretch" src="assets/images/03.png" />
-					</section>
-					<section>
-						<img class="stretch" src="assets/images/04.png" />
-					</section>
-					<section>
-						<img class="stretch" src="assets/images/05.png" />
-					</section>
-					<section>
-						<img class="stretch" src="assets/images/06.png" />
-					</section>
+
 					<section>
 						<h2>MVP/MS 2.0</h2>
-						<h3>sync stock level update to subshop (MUL-259)</h3>
+						<h3>create 'subshops' REST ressource in EMS app (MUL-313)</h3>
 						<p>
 							<ul>
-								<li>MS-Sync-Service:</li>
+								<li>...</li>
+								<li>...</li>
+					            <li>...</li>
 								<ul>
-								    <li>new function 'subshops_auto_sync_products' in 'MainSyncController'</li>
-									<li>new put functions in rest and store connector classes</li>
-									<li>added model functions and hooks for 'product','product_sync','subshop' and 'master_sub_shop'</li>
-								</ul>
-								<li>ePages6:</li>
-								<ul>
-									<li>changes in MultiStoreConnector Cartridge sync API</li>
-									<li>fix update product function to handle subclasses of "Product"</li>
+								    <li>...</li>
+									<li>...</li>
+									<li>...</li>
 								</ul>
 							</ul>
 						</p>
 					</section>
+					<section>
+						<img class="stretch" src="assets/images/0x.png" />
+					</section>
 				    <section>
-						<h2>MUL-289</h2>
+						<h2>MUL-311,MUL-313</h2>
 						<h3>showtime</h3>
 						<p>
 							<ul>
@@ -196,18 +202,20 @@
 					</section>
 				</section>
 
-                                <section>
+                <section>
                     <section>
-                        <h2>MVP/MS 2.0</h2>
-						<h3>Updated documentation</h3>
+                        <h2>Other</h2>
+						<h3>MUL-298, MUL-306</h3>
                     	<p>
 							<ul>
-								<li>Adapted documentation for:</li>
+								<li>...</li>
+								<li>...</li>
+					            <li>...</li>
 								<ul>
-								    <li><a href="https://epages.atlassian.net/wiki/display/MUL/How+to+install+MultiStore+1.0+-+Short+version">How to install MultiStore 1.0</a></li>
-									<li><a href="https://epages.atlassian.net/wiki/display/MUL/How+to+install+parallel+sync+for+MultiStores+1.0+-+short+version">How to install parallel sync for MultiStores 1.0</li>
-									<li><a href="https://epages.atlassian.net/wiki/display/MUL/How+to+install+Microservice+for+MultiStore">How to configure Microservice for MultiStore</a></li>
-                                </ul>
+								    <li>...</li>
+									<li>...</li>
+									<li>...</li>
+								</ul>
 							</ul>
 						</p>
                     </section>
@@ -215,16 +223,18 @@
 
                 <section>
                     <section>
-                        <h2>MVP/MS 2.0</h2>
-						<h3>Come closer to pipeline</h3>
+                        <h2>next steps</h2>
+						<h3>...</h3>
                     	<p>
 							<ul>
-								<li>Steps:</li>
+								<li>...</li>
+								<li>...</li>
+					            <li>...</li>
 								<ul>
-								    <li><a href="https://epages.atlassian.net/browse/MUL-275">Integrated cartridge MultiStoreMasterConnector to 6.17.51 (MUL-275)</a></li>
-									<li><a href="https://epages.atlassian.net/browse/MUL-303">Make PR and pipeline machines known to MicroService (MUL-303)</li>
-                                    <li><a href="http://team-gold-demo-mvp-ms.vm-intern.epages.com:3000/admin/host">Created MVP MicroService machine with current develop state (http://team-gold-demo-mvp-ms.vm-intern.epages.com:3000/admin)</a></li>
-                                </ul>
+								    <li>...</li>
+									<li>...</li>
+									<li>...</li>
+								</ul>
 							</ul>
 						</p>
                     </section>
