@@ -57,7 +57,7 @@
 
 				<section>
 				    <section data-background="assets/images/full_distribution_center.jpg">
-					    <h1>Why MultiStores?</h1>
+					    <h1>Why MultiStore?</h1>
 
 					    <aside class="notes">
 						    <ul>
@@ -68,7 +68,7 @@
 
 				    <section data-background="assets/images/empty_distribution_center.jpg">
 					    <h1>sell more</h1>
-						<h1>but how?</h1>
+						<h2>but how?</h2>
 
 					    <aside class="notes">
 						    <ul>
@@ -102,7 +102,7 @@
 
 				<section>
 				    <section data-background="assets/images/multistores_1_0.jpg">
-					    <h1>what is our goal?</h1>
+					    <h1>What is our goal?</h1>
 
 					    <aside class="notes">
 						    <ul>
@@ -171,9 +171,22 @@
 				</section>
 
 				<section>
+
+				</section>
+
+				<section>
 					<section data-background="assets/images/next_steps.jpg">
 					    <h1>What's next?</h1>
-						<!-- <h2>let the shopowners sell your products</h2> -->
+
+					    <aside class="notes">
+						    <ul>
+								<li> ... </li>
+							</ul>
+					    </aside>
+				    </section>
+
+					<section data-background="assets/images/beyond.jpg">
+					    <h1>First connection to beyond</h1>
 
 					    <aside class="notes">
 						    <ul>
@@ -183,105 +196,13 @@
 				    </section>
 				</section>
 
-				<section>
-					<section data-background="assets/background_images/gold_stones_hc_cut_left.jpg" id="agenda">
-						<h2>Agenda</h2>
-						<ol>
-							<li>MVP: improved REST function for selected master products per subshop</li>
-							<li>MVP/MS 2.0: complete synchronisation circle for core product attributes</li>
-							<li></li>
-						</ol>
-						<aside class="notes">
-						</aside>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>MVP plan</h2>
-						<h3>add variation products in ms_subshop_product_map (MUL-303)</h3>
-						<p>
-							<ul>
-								<li>ePages 6:</li>
-								<ul>
-								    <li>all changes in old MS 1.0 cartridge 'MultiStore'</li>
-									<li>improved rest resource 'ms_subshop_product_maps' to get also variation products</li>
-								    <li>changes in Sync API</li>
-						        </ul>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<h2>MUL-303</h2>
-						<h3>showtime</h3>
-						<p>
-							<ul>
-								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/eRetail.admin">ePages6-SubShop</a></li>
-								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/MasterShop.admin">ePages6-MasterShop</a></li>
-								<li><a href="http://teamgold-vm04.vm-intern.epages.com/epages/MultiStore.rest/api/multi_stores/ms_subshop_product_maps?shop=eRetail">REST-Call</a></li>
-							</ul>
-						</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>MVP/MS 2.0</h2>
-						<h3>sync stock level update to subshop (MUL-259)</h3>
-						<p>
-							<ul>
-								<li>hiding complexity</li>
-								<li>for new mastershops, subshops or assignment, hooks take care of complex actions</li>
-					            <li>for now main sync consists of two parts</li>
-								<ul>
-								    <li>auto fetch dirty sources for all mastershops</li>
-									<li>sync products for all subshops</li>
-									<li>... next will be auto fetch dirty sources for all subshops (selected master catalog)</li>
-								</ul>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<h2>MVP/MS 2.0</h2>
-						<h3>sync stock level update to subshop (MUL-259)</h3>
-						<p>
-							<ul>
-								<li>MS-Sync-Service:</li>
-								<ul>
-								    <li>new function 'subshops_auto_sync_products' in 'MainSyncController'</li>
-									<li>new put functions in rest and store connector classes</li>
-									<li>added model functions and hooks for 'product','product_sync','subshop' and 'master_sub_shop'</li>
-								</ul>
-								<li>ePages6:</li>
-								<ul>
-									<li>changes in MultiStoreConnector Cartridge sync API</li>
-									<li>fix update product function to handle subclasses of "Product"</li>
-								</ul>
-							</ul>
-						</p>
-					</section>
-				    <section>
-						<h2>MUL-289</h2>
-						<h3>showtime</h3>
-						<p>
-							<ul>
-								<li><a href="http://vm-mzeyen2.vm-intern.epages.com/epages/eRetail.admin/">ePages6-SubShop</a></li>
-								<li><a href="http://agrohmann-vm5.vm-intern.epages.com:3000/admin/subshop">MS-Sync-Service</a></li>
-							</ul>
-						</p>
-					</section>
-				</section>
-
-				<section data-background="assets/background_images/gold_stones_hc_cut_right.jpg" style="text-align: left;">
-					<h1>Last Questions?</h1>
-					<p>
-						- <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">MultiStore confluence space</a> <br>
-						- <a href="http://team-gold-demo-ep.vm-intern.epages.com:3001/api-console/connector.html">REST documentation</a> <br>
-						- <a href="https://epages.atlassian.net/wiki/display/MUL/MVP">MVP documentation</a> <br>
-						- <a href="https://github.com/ePages-de/multistore-MS">MultiStore Synchronization Service repository</a> <br>
-						- <a href="https://github.com/ePages-de/rest-test-gold">REST-Test repository</a> <br>
-						- <a href="https://github.com/ePages-de/multistore-rest-documentation">REST-Test documentation repository</a> <br>
-					</p>
+				<section data-background="assets/images/raising_hands.jpg">
+					<h1>Questions?</h1>
+					<aside class="notes">
+						<ul>
+							<li> ... </li>
+						</ul>
+					</aside>
 				</section>
 
 			</div>
