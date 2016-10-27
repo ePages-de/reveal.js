@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Team Gold - RND Day 2016</title>
+		<title>Team Gold - Review #18</title>
 
 		<meta name="description" content="Review presentation">
 		<meta name="author" content="Team Gold - ePages">
@@ -45,7 +45,7 @@
 				</section> -->
 				<section data-background="assets/background_images/team_gold_back_1.jpg">
 					<h1>Team Gold</h1>
-					<h3>RND DAY 2016</h3>
+					<h3>#Review #18</h3>
 					<p>
 						<small>Created by <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">Andreas Grohmann, Florian Ziller</a> / <a href="https://epages.atlassian.net/wiki/display/MUL/Multistores">teamgold@epages.com</a></small>
 					</p>
@@ -54,377 +54,98 @@
 						This is the main slide for the team gold review.
 					</aside>
 				</section>
-
 				<section>
-				    <section data-background="assets/images/full_distribution_center.jpg">
-						<h1>Why MultiStore?</h1>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-310</h1>
+						<h2>ePages6 REST paging "ms_subshop_product_maps"</h2>
 
-					    <aside class="notes">
-						    <ul>
-								<li>imagine you are a big reseller</li>
-								<li>huge distribution center</li>
-							</ul>
-					    </aside>
+						<ul>
+							<li><p class="fragment big_white">performance reasons, e.g. 55.000 products</p></li>
+							<li><p class="fragment big_white">get rid of DAL function</p></li>
+							<li><p class="fragment big_white">direct db access</p></li>
+							<li><p class="fragment big_white">higher performance</p></li>
+						</ul>
 				    </section>
+				</section>
+				<section>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-319</h1>
+						<h2>MS 1.0: cleanup products without categories</h2>
 
-				    <section data-background="assets/images/empty_distribution_center.jpg">
-					    <h1><span>sell more, but how?</span></h1>
-
-					    <aside class="notes">
-						    <ul>
-								<li>you want to sell more</li>
-								<li>how you become able to sell more</li>
-							</ul>
-					    </aside>
+						<ul>
+							<li><p class="fragment big_white">Talisma-698-459</p></li>
+							<li><p class="fragment big_white">partner unable to delete ms objects without category</p></li>
+							<li><p class="fragment big_white">new script "deleteOrphanProductsMultiStore.pl"</p></li>
+							<li><p class="fragment big_white">task for catalog browser MUL-321</p></li>
+						</ul>
 				    </section>
+				</section>
+				<section>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-309</h1>
+						<h2>MS 2.0: performance PUT "ms_products"</h2>
 
-					<section data-background="assets/images/sell_alone_1.jpg">
-					    <h1>sell on your own</h1>
-
-					    <aside class="notes">
-						    <ul>
-								<li>dont be the only one who sell your products</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/sell_it_on_different_shops.jpg">
-					    <h1>different shops</h1>
-
-					    <aside class="notes">
-						    <ul>
-								<li>share products</li>
-								<li>use other shop owners to sell your products</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/sub_master_1.jpg">
-
-					    <aside class="notes">
-						    <ul>
-								<li> ... </li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/sub_master_2.jpg">
-
-					    <aside class="notes">
-						    <ul>
-								<li> ... </li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/sub_master_3.jpg">
-
-					    <aside class="notes">
-						    <ul>
-								<li> ... </li>
-							</ul>
-					    </aside>
+						<ul>
+							<li><p class="fragment big_white">TODO</p></li>
+							<li><p class="fragment big_white">TODO</p></li>
+							<li><p class="fragment big_white">TODO</p></li>
+							<li><p class="fragment big_white">TODO</p></li>
+						</ul>
 				    </section>
 				</section>
 
 				<section>
-				    <section data-background="assets/images/multistores_1_0.jpg">
-					    <h1>What is our goal?</h1>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-329</h1>
+						<h2>MS 2.0: mass performance test</h2>
+
 						<ul>
-							<li><p class="fragment big_white"><span>support ms 1.0</span></p></li>
-							<li><p class="fragment big_white"><span>move functionality step by step to a new solution</span></p></li>
-							<li><p class="fragment big_white"><span>build a new microservice</span></p></li>
+							<li><p class="fragment big_white">55.000 products in mastershop</p></li>
+							<li><p class="fragment big_white">100 subshops</p></li>
+							<li><p class="fragment big_white">36.000 selected products per shop</p></li>
+							<li><p class="fragment big_white">measure initial add, synchronization of stocklevel</p></li>
 						</ul>
-
-					    <aside class="notes">
-						    <ul>
-								<li>what is our team goal</li>
-								<li>what we want to achieve</li>
-								<li>1 st restore the ms 1.0 wreck</li>
-								<li>2 nd cut out functionality from epages 6</li>
-								<li>3 rd build a separate micro service</li>
-							</ul>
-					    </aside>
-				    </section>
-
-				    <section data-background="assets/images/multistores_2_0.jpg">
-					    <h1>What is multistores 2.0?</h1>
-						<!--<ul>
-							<li><p class="fragment big_white">multistores 2.0 is a hybrid</p></li>
-							<li><p class="fragment big_white">combination of epages 6 and the EMS app</p></li>
-							<li><p class="fragment big_white"><span>EMS app - "epages multistore synchronization app"</p></li>
-						</ul> -->
-
-					    <aside class="notes">
-						    <ul>
-								<li>multistores 2.0 is a hybrid</li>
-								<li>its a combination of epages 6 and the "epages multistore synchronization app", aka EMS app</li>
-								<li><p>multistores 2.0 is a hybrid</p></li>
-								<li><p>combination of epages 6 and the EMS app</p></li>
-								<li><p>EMS app - "epages multistore synchronization app"</p></li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/multistores_2_0_crayon_1.jpg">
-
-					    <aside class="notes">
-						    <ul>
-								<li>multistores 2.0 is a hybrid</li>
-								<li>its a combination of epages 6 and the "epages multistore synchronization app", aka EMS app</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/multistores_2_0_crayon_2.jpg">
-
-					    <aside class="notes">
-						    <ul>
-								<li>multistores 2.0 is a hybrid</li>
-								<li>its a combination of epages 6 and the "epages multistore synchronization app", aka EMS app</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/architecture.jpg">
-					    <h1><span>architecture</span></h1>
-						<ul>
-							<li><p class="fragment big_white">microservices architecture</p></li>
-							<li><p class="fragment big_white">REST</p></li>
-							<li><p class="fragment big_white">docker</p></li>
-							<li><p class="fragment big_white">Ruby on Rails</p></li>
-							<li><p class="fragment big_white">CI</p></li>
-							<li><p class="fragment big_white">mysql</p></li>
-						</ul>
-
-					    <aside class="notes">
-						    <ul>
-								<li>microservices architecture</li>
-								<li>docker</li>
-								<li>REST</li>
-								<li>Ruby on Rails</li>
-								<li>CI</li>
-								<li>mysql</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/microservice_engine_2.jpg">
-					    <h1>ems app engine</h1>
-						<ul>
-							<li><p class="fragment big_white"><span>based on "Ruby on Rails"</span></p></li>
-							<li><p class="fragment big_white"><span>big community</span></p></li>
-							<li><p class="fragment big_white"><span>vast collection of open source code</span></p></li>
-							<li><p class="fragment big_white"><span>popular projects Shopify, GitHub, Twitter, Soundcloud, Airbnb, ...</span></p></li>
-
-						</ul>
-
-					    <aside class="notes">
-						    <p>
-								<ul>
-									<li><p>based on "Ruby on Rails" framework</p></li>
-									<li><p>fast process of programming</p></li>
-									<li><p>big community</p></li>
-									<li><p>vast collection of open source code</p></li>
-									<li><p>high productivity</p></li>
-									<li><p>focus on testing, many testing frameworks</p></li>
-									<li><p>open source, no costs</p></li>
-									<li><p>used by Shopify, GitHub, Twitter, Soundcloud, Airbnb, Twitch, Groupon, Hulu, Kickstarter, Strava, Basecamp, Etsy ...</p></li>
-								</ul>
-
-							Benefits of Ruby on Rails?
-							So why Ruby on Rails? We find Ruby provides us with a combination of the best tooling, better quality code libraries and a more pragmatic approach to software. Plus, the Ruby community tends to have a higher calibre of engineer, who favour responsible development over the gung-ho approach that can be seen in other communities.
-
-                            <ul>
-								<li>Tooling - Rails provides fantastic tooling that helps you to deliver more features in less time. It provides a standard structure for web apps, where all the common patterns are taken care of for you.
-                                    Libraries - There's a gem (3rd party module) for just about anything you can think of. They are all publicly available and searchable through https://rubygems.org/.</li>
-                                <li>Code Quality - Generally, we find the quality of third party Ruby code to be significantly higher than their PHP or NodeJS equivalents.</li>
-                                <li>Test Automation - The Ruby community is big in to testing and test automation. We believe this is incredibly valuable in helping to deliver good quality software and is one of the reason the Ruby libraries are so great.</li>
-                                <li>Large Community - Pretty much every major city in the world has a Ruby community that runs regular meetups. It's one of the most popular languages on social coding site Github.</li>
-                                <li>Popular in The Valley - History has shown that technology that's been popular within Silicon Valley has gradually been adopted across the world. If you look at the big startup successes of recent years, such as Airbnb, Etsy, GitHub & Shopify - they are are all on Ruby on Rails.</li>
-                                <li>Responsible Developers - You tend to find Ruby developers are more closely aligned around the the rules of responsible development. If you start small, communicate well, tackle vertical slices, write simple code over smart code, share ownership etc, you tend to find your project ends up in better shape.</li>
-                                <li>Productivity - Ruby is an eloquent and succinct language, which when combined with the plethora of 3rd party libraries, enables you to development features incredibly fast. I would say it's the most productive programming language around.</li>
-                                <li>Next Generation - Ruby on Rails seems to be the language of choice for a number of the popular online code schools, such as Makers Academy, Steer and CodeCademy. This should mean an increase in talented programmers joining the Ruby community over the coming years.</li>
-							</ul>
-                            Disadvantages of Ruby on Rails?
-
-                            Of course Rails does have have its disadvantages and it's only fair that we share those in this post.
-							<ul>
-                                <li>Runtime Speed - The most cited argument against Ruby on Rails is that it's "slow". We would agree, certainly when compared to the runtime speed of NodeJS or GoLang. Though in reality, the performance of a Ruby application is incredibly unlikely to be a bottleneck for a business. In 99% of cases, the bottleneck is going to be elsewhere, such as within the engineering team, IO, database or server architecture etc. When you get to a significant enough scale to have to worry about Rails runtime speed, then you're likely to have a incredibly successful application (think Twitter volume) and will have many scaling issues to deal with.</li>
-                                <li>Boot Speed - The main frustration we hear from developers working in Rails is the boot speed of the Rails framework. Depending on the number of gem dependencies and files, it can take a significant amount of time to start, which can hinder developer performance. In recent versions of Rails this has been somewhat combatted by the introduction of Spring, but we feel this could still be faster.</li>
-                                <li>Documentation - It can be hard to find good documentation. Particularly for the less popular gems and for libraries which make heavy use of mixins (which is most of Rails). You'll often end up finding the test suite acts as documentation and you'll rely on this to understand behaviour. This isn't itself a bad thing, as the test suite should be the most up-to-date representation of the system, however, it can still be frustrating having to dive into code, when sometimes written documentation would have been much quicker.</li>
-                                <li>Multithreading - Rails supports multithreading, though some of the IO libraries do not, as they keep hold of the GIL (Global Interpreter Lock). This means if you're not careful, requests will get queued up behind the active request and can introduce performance issues. In practice, this isn't too much of a problem as, if you use a library that relies on GLI, you can switch to multiprocess setup. The knock-on effect of this is your application ends up consuming more compute resources than necessary, which can increase your infrastructure costs.</li>
-                                <li>ActiveRecord - AR is used heavily within the Ruby on Rails world and is a hard dependency for many of the RubyGems. Although we think it's a great design pattern, the biggest drawback we see is that your domain becomes tightly coupled to your persistence mechanism. This is far from ideal and can lead to bad architecture decisions. There are many ways to work around this, some of which are included in this 7 Patterns to Refactor Fat ActiveRecord Models article. We would like to see Rails become less reliant on ActiveRecord.</li>
-							</ul>
-							</p>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/rest.jpeg">
-					    <h2>high performance REST API</h2>
-						<ul>
-							<li><p class="fragment big_white"><span>high traffic, e.g. 1000 products/ request</span></p></li>
-							<li><p class="fragment big_white"><span>seperate ePages 6 REST API</span></p></li>
-							<li><p class="fragment big_white"><span>low level database access</span></p></li>
-							<li><p class="fragment big_white"><span>handles caches and hooks</span></p></li>
-						</ul>
-
-					    <aside class="notes">
-						    <ul>
-								<li>need to move a lot of content</li>
-								<li>therefore we need a high performance REST API</li>
-								<li>REST API is only for multistores purposes</li>
-								<li>nearly direct access to the database</li>
-								<li>handles caches and hooks</li>
-								<li>performance boost comes from saving multiple database connections</li>
-							</ul>
-					    </aside>
 				    </section>
 				</section>
 
 				<section>
-					<section data-background="assets/images/first_achievements.jpg">
-						<h1>first achievements</h1>
-						<ul>
-							<li><p class="fragment big_white"><span>replace parts of synchronization</span></p></li>
-							<li><p class="fragment big_white"><span>build automatisms</span></p></li>
-							<li><p class="fragment big_white"><span>support MS 1.0</span></p></li>
-						</ul>
-
-					    <aside class="notes">
-						    <ul>
-								<li>closed synchronization cycle for product core attributes, e.g. stock level</li>
-								<li>auto fetch for master / subshops</li>
-								<li>auto create master / subshops</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/handover.jpg">
-						<h1>replace functionality</h1>
-						<ul>
-							<li><p class="fragment big_white"><span>replace the synchronization of ms-products core attributes</span></p></li>
-							<li><p class="fragment big_white"><span>e.g. StockLevel</span></p></li>
-							<li><p class="fragment big_white"><span>completely removed from MS 1.0</span></p></li>
-							<li><p class="fragment big_white"><span>EMS app takes over synchronisation for single attributes</span></p></li>
-						</ul>
-
-					    <aside class="notes">
-						    <ul>
-								<li>replace the synchronization of ms-products core attributes</li>
-								<li>e.g. StockLevel</li>
-								<li>completely removed from MS 1.0</li>
-								<li>EMS app is able to take over the synchronisation for single attributes</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/clock_gears.jpg">
-						<h2>build automatism, hide complexity</h2>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-311</h1>
+						<h2>MS 2.0: EMS mastershop resource</h2>
 
 						<ul>
-							<li><p class="fragment big_white"><span>auto create master/subshops</span></p></li>
-							<li><p class="fragment big_white"><span>auto fetch mastershops</span></p></li>
+							<li><p class="fragment big_white">manage mastershops via REST</p></li>
+							<li><p class="fragment big_white">called in a hook by epages6</p></li>
+							<li><p class="fragment big_white">TODO_LINK</p></li>
+							<li><p class="fragment big_white">TODO_LINK</p></li>
 						</ul>
-
-					    <aside class="notes">
-						    <ul>
-								<li>creating lot of automatism</li>
-								<li>hiding complexity</li>
-								<li>everything works under the hood</li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/sherpa.jpg">
-					    <h1>support for MS 1.0</h1>
-
-						<ul>
-							<li><p class="fragment big_white"><span>support patches for partner</span></p></li>
-							<li><p class="fragment big_white"><span>fix bugs, add necessary features</span></p></li>
-							<li><p class="fragment big_white"><span>pipeline integration</span></p></li>
-							<li><p class="fragment big_white"><span>initial limitations for MS 2.0 development</span></p></li>
-						</ul>
-
-					    <aside class="notes">
-						    <ul>
-
-								<li>support patches for partner, to get partners on current version</li>
-								<li>e.g. eno patch  2 weeks patch</li>
-								<li>fix MS 1.0 bugs</li>
-								<li>initial limitations for MS 2.0 development</li>
-								<li>pipeline integration</li>
-							</ul>
-					    </aside>
 				    </section>
 				</section>
 
 				<section>
-					<section data-background="assets/images/demonstration.jpg">
-						<h1>short demonstration</h1>
-						<p>
-							<ul>
-                                <li><a href="http://fziller-gold-1.vm-intern.epages.com/epages/MasterShop.admin">ePages6 MasterShop</a></li>
-								<li><a href="http://fziller-gold-1.vm-intern.epages.com/epages/MasterShop.admin">ePages6 SubShop</a></li>
-								<li><a href="http://fziller-gold-2.vm-intern.epages.com:3000/admin">ems app</a></li>
-							</ul>
-						</p>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-316</h1>
+						<h2>MS 1.0: impossible unassignment product<->category</h2>
+
+						<ul>
+							<li><p class="fragment big_white">found in ENO 6.17.42</p></li>
+							<li><p class="fragment big_white">TODO_LINK</p></li>
+							<li><p class="fragment big_white">TODO_LINK</p></li>
+						</ul>
 				    </section>
 				</section>
 
 				<section>
-					<section data-background="assets/images/next_steps.jpg">
-					    <h1>What's next?</h1>
+				    <section data-background="assets/images/black_stone_wall.jpg">
+						<h1>MUL-XYZ</h1>
+						<h2>MS X.0: TODO</h2>
 
-					    <aside class="notes">
-						    <ul>
-								<li> ... </li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/first_flight.jpg">
-					    <h1>first practical use</h1>
-
-					    <aside class="notes">
-						    <ul>
-								<li> ... </li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/beyond.jpg">
-					    <!-- <h1>First connection to beyond</h1> -->
-
-					    <aside class="notes">
-						    <ul>
-								<li> ... </li>
-							</ul>
-					    </aside>
-				    </section>
-
-					<section data-background="assets/images/open_source.jpg">
-					    <h1>start an open source discussion</h1>
-
-					    <aside class="notes">
-						    <ul>
-								<li>only two developers</li>
-								<li>benefit from community developers/partners</li>
-								<li>more man power</li>
-								<li>better reaction to the needs of MS partners</li>
-								<li>no own partner solutions anymore</li>
-							</ul>
-					    </aside>
-				    </section>
-				</section>
-
-				<section data-background="assets/images/raising_hands.jpg">
-					<h1>Questions?</h1>
-					<aside class="notes">
 						<ul>
-							<li> ... </li>
+							<li><p class="fragment big_white">TODO_POINT</p></li>
+							<li><p class="fragment big_white">TODO_LINK</p></li>
+							<li><p class="fragment big_white">TODO_LINK</p></li>
 						</ul>
-					</aside>
+				    </section>
 				</section>
 
 				<section>
